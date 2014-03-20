@@ -1,0 +1,16 @@
+gem 'devise'
+
+>bundle install
+
+>rails g devise:install
+
+>buncha useful messages, do all these things
+
+devise is/uses rails engines
+if you look at it now you wont see views
+they are hidden inside the devise gem
+if you want to edit them you have to use
+rails g devse:views
+
+a rails engine is any piece of code that is
+wrapped inside of a rails gem
