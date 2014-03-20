@@ -1,0 +1,31 @@
+<% action = user.persisted? ? user_url(user) : users_url   %>
+<% method = user.persisted? ? "put" : "post" %>
+<% message = user.persisted? ? "Update" : "Create" %>
+
+<form action="<%= action %>" method="post">
+  <input
+  name="_method"
+  type="hidden"
+  value="<%= method %>">
+  
+  <%= auth_token %>
+  
+  <label>
+    Username
+    <input type="text" name="user[username]" value="<%= user.username %>">
+  </label>
+  <br>
+  
+  <label>
+    Password
+    <input type="password" name="user[password]" value="">
+  </label>
+  <br>
+  <label>
+    Species   
+    <input type="text" name="user[species]" value="">
+  </label>
+
+  <p><input type="submit" value="<%= message %>"></p>
+    
+</form>

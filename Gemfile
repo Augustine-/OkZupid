@@ -18,9 +18,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+ 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'bcrypt'
 end
 
