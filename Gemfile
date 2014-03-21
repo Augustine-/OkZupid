@@ -27,7 +27,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'shoulda-matchers'
+  gem 'capybara'
   gem 'guard-rspec'
+  
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end

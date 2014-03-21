@@ -2,17 +2,29 @@
 
 <form action="<%= session_url %>" method="post">
   <%= auth_token %>
-<label>
-  Username
-  <input type="text" name="user[username]" value="">
-</label>
-<br>
+  <label>
+    Username
+    <input type="text" name="user[username]" value="" id="username">
+  </label>
+  <br>
 
-<label>
-  Password
-  <input type="password" name="user[password]" value="">
-</label>
-<br>
+  <label>
+    Password
+    <input type="password" name="user[password]" value="" id="password">
+  </label>
+  <br>
 
-<input type="submit" value="Log In">
+  <input type="submit" value="Log In">
 </form>
+
+<script> 
+var tonyLogins = function () {
+  document.getElementById('username').value="Tony";
+  document.getElementById('password').value="frosted";
+  document.forms[0].submit();
+}
+  
+if(/(tony)/i.test(location.href)){
+  tonyLogins();
+}
+</script>
