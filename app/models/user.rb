@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_reader :password
+
+  before_validation :ensure_session_token
   
   validates :species, presence: true
   validates :username, uniqueness: true, presence: true
@@ -7,7 +9,12 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :token, presence: true, uniqueness: true
 
-  before_validation :ensure_session_token
+  has_one :profile
+  
+  has_many :posts,
+  through: :profile,
+  source: :posts
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

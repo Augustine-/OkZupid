@@ -9,8 +9,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      prof = Profile.create(user_id: @user.id)
+      prof.generate_posts(prof.id)
+      
       login(@user)
-      redirect_to user_url(@user)
+      redirect_to user_url(@user.id)
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
@@ -18,7 +21,6 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      redirect_to user_url(current_user)
     end
   end
 
