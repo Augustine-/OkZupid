@@ -1,0 +1,32 @@
+<form action="<%= messages_url %>" method="post">
+  <%= auth_token %>
+  
+  <label>
+    To:&nbsp;&nbsp;
+    <input type="text" name="message[reciever_username]" value="">
+  </label>
+  <br>
+  <label>
+    Title
+    <input type="text" name="message[title]" value="">
+  </label>
+  <br>
+  <label class="checkbox-inline">
+    <input type="checkbox" name="message[secret]" value="true"> Send Anonymously
+  </label>
+  <br>
+  
+  
+<textarea rows="10"
+  name="message[body]" 
+  value=""  
+  id="message[body]">
+  </textarea>
+      <p style="text-indent: 19em;"><input type="submit" value="Woo!"></p>
+      
+
+  <input type="hidden" 
+  name="message[sender_id]" 
+  value="<%= current_user.id %>"
+  id="message[sender_id]">
+</form>

@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "bootstrap";
+
+
+
+textarea {
+  height: auto;
+  width: 50%;
+}
+
+img {
+  width:33%;
+}
+
+//body{
+//  background-image: linear-gradient(to bottom,#903AAB 0, #3D17E7 100%);
+//}
+
+.logo, a.logo:hover, a.logo:visited, a.logo:active{
+  color:inherit;
+  text-decoration: none;
+}
+
+
+.red {
+  color:red;
+}
+
+.essays{
+  background-color: white;
+}
+
+.okz-header{
+  background-image: linear-gradient(to bottom,#3D17E7 0, #903AAB 100%);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-shadow: 0 1px 0 rgba(202, 0, 234, 0.46);
+}
+
+
+.rightbar{
+  position: relative;
+  right:0px;
+  height: 100%;
+}
+
+
+
+.essays {
+  width: 60%;
+  height: 100%;
+  align: center;
+  float: left;
+}

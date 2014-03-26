@@ -1,17 +1,22 @@
-<h2>
-  <%= current_user.username + " the " + current_user.species if current_user%>
-</h2>
 
+<div id="delta" class="container">                 
+  <% prompt1 = "My self summary" %>
+  <% prompt2 = "What I'm doing with my life" %>
+  <% prompt3 = "Six things I couldn't live without" %>
+  <% prompt4 = "On a typical Friday night I'm..." %>
 
-<% prompt1 = "My self summary" %>
-<% prompt2 = "What I'm doing with my life" %>
-<% prompt3 = "Six things I couldn't live without" %>
-<% prompt4 = "On a typical Friday night I'm..." %>
-
-<%= render "post", prompt: prompt1 %>
-<%= render "post", prompt: prompt2 %>
-<%= render "post", prompt: prompt3 %>
-<%= render "post", prompt: prompt4 %>
-
-
-
+  <div class="row">
+    <%= render 'layouts/leftbar' %>
+    
+    <div class="col-xs-8">
+      <div class="essays">
+        <%= render "post", prompt: prompt1 %>
+        <%= render "post", prompt: prompt2 %>
+        <%= render "post", prompt: prompt3 %>
+        <%= render "post", prompt: prompt4 %>
+      </div>
+    </div>
+    
+    <%= render 'layouts/rightbar' %>
+  </div>
+</div>

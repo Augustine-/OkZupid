@@ -1,0 +1,15 @@
+<% if @messages[:sent_messages][0] %>
+  <% @messages[:sent_messages].each do |message| %>
+  <div class="<%= message.id %>-sent">
+      <button type="button" class="red btn btn-link btn-xs">
+        <div class="glyphicon glyphicon-remove sent" id="<%= message.id %>">
+        </div> 
+        <a href="#<%= message.id %>"></a> 
+      </button>
+      <a href="#<%= message.id %>" class="msg"><%= User.find(message.sender_id).username %> the <%= User.find(message.sender_id).species %>--<%= message.title %></a>
+      <br>
+      </div>
+  <% end %>
+<% else %>
+  <%= "No mail yet! Take a chance, send a message!" %>
+<% end %>

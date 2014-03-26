@@ -1,0 +1,11 @@
+<div id="rightbar" class="rightbar col-xs-1">
+  <% if current_user %>
+  <% user = current_user %>
+  
+  <h3>
+    <%= user.username + " the " + user.species %>
+  </h3>
+  <%= link_to "Log Out", session_url, method: :delete%>
+
+  <% end %>
+</div>

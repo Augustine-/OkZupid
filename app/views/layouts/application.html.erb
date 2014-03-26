@@ -7,15 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-  <%= current_user.username + " the " + current_user.species%>
-  <%= link_to "Log Out", session_url, method: :delete%>
-  <% end %>
-  <br>
-
+ 
   <%= render 'layouts/errors' %>
+  <div class="okz-header" id="content">
+    <div class="container">
+      <a href="/" class="logo"><h1>OKZoopid</h1></a> 
+    </div>
+  </div>
   
   <%= yield %>
 
+ 
 </body>
 </html>

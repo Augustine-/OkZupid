@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :find_post_by_prompt
   
   def find_post_by_prompt(prompt)
-    current_user.posts.find_by(prompt: prompt)
+    User.find(params[:id]).posts.find_by(prompt: prompt)
   end
 
   def current_user
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+
+  def profile_id
+    params[:id]
   end
 
   def login(user)

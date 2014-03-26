@@ -29,6 +29,14 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(secret)
   end
 
+  def username=(s)
+      write_attribute(:username, s.to_s.titleize)
+  end
+  
+  def species=(s)
+      write_attribute(:species, s.to_s.titleize)
+  end
+
   def password=(secret)
     if(secret).present?
       @password = secret

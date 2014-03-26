@@ -1,5 +1,6 @@
 
-<p><%= prompt %></p>
+<h5><%= prompt %><h5>
+<% if params[:id].to_i == current_user.id %>
 <form action="<%= post_url %>" method="POST">
   <%= auth_token %>
   <input
@@ -15,8 +16,15 @@
 name="post[prompt]" 
 value="<%= prompt %>"
 id="post[prompt]">
+
 <input type="submit" value="✍">
+
+
 </form>
-<div id="content4"><%= find_post_by_prompt(
-prompt).content %>
+<% else %>
+<!-- send message -->
+<% end %>
+<div id="content4"><i><%= find_post_by_prompt(
+prompt).content %></i>
 </div>
+<br>

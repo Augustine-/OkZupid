@@ -1,0 +1,101 @@
+<div id="delta" class="container">  
+
+  <div class="row">
+    <%= render 'layouts/leftbar' %>
+
+    <div class="col-xs-8">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#inbox" data-toggle="tab">Inbox</a></li>
+        <li><a href="#new" data-toggle="tab">New Message</a></li>
+        <li><a href="#sent" data-toggle="tab">Sent Mail</a></li>
+        <li><a href="#secrets" data-toggle="tab">Secret Admirers</a></li>
+      </ul>
+   
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="inbox">
+          <span class="back"></span>
+          <br>
+          <%= render 'inbox' %></span>
+        </div>
+          
+        <div class="tab-pane fade" id="new">
+          <br>
+          <%= render 'compose' %>
+        </div>
+        <div class="tab-pane fade" id="sent">
+          <br>
+          <%= render 'sent' %>
+        </div>
+        <div class="tab-pane fade" id="secrets">
+          <br>
+          <%= render 'secret' %>
+        </div>
+      </div>
+    </div>
+
+        
+    <%= render 'layouts/rightbar' %>
+  </div>
+</div>
+
+
+<!-- listen for click
+make an ajax request for contents of the message
+on ajax success fill a div with the parsed json from ajax req -->
+    
+
+<script>
+$('.recieved').click(function (event) {
+  event.preventDefault();
+  var id = event.target.id
+  $.ajax({
+    url:"/messages/" + id + "/recieved",
+    type:"post",
+    dataType: "json",
+    data: {"_method":"delete"},
+    success: function () {
+      $('.' + id) + '-recieved'.remove();
+    },
+    error: function () {
+      $('.' + id + '-recieved').remove();
+    }
+  })
+})
+      
+$('.sent').click(function (event) {
+  event.preventDefault();
+  var id = event.target.id
+  $.ajax({
+    url:"/messages/" + id + "/sent",
+    type:"post",
+    dataType: "json",
+    data: {"_method":"delete"},
+    success: function () {
+      alert("success!...wtf?")
+      $('.' + id + "-sent").remove();
+    },
+    error: function () {
+      $('.' + id + "-sent").remove();
+    }
+  })
+})
+      
+$('.secret').click(function (event) {
+  event.preventDefault();
+  var id = event.target.id
+  $.ajax({
+    url:"/messages/" + id + "/recieved",
+    type:"post",
+    dataType: "json",
+    data: {"_method":"delete"},
+    success: function () {
+      alert("success!...wtf?")
+      $('.' + id + "-secret").remove();
+    },
+    error: function () {
+      $('.' + id + "-secret").remove();
+    }
+  })
+}) 
+
+</script>
