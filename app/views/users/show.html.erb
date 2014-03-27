@@ -9,6 +9,7 @@
     <%= render 'layouts/leftbar' %>
     
     <div class="col-xs-8">
+      <%= image_tag profile_pic(@user) %>
     <h3><%= @user.username + " the " + @user.species %></h3>
       <div class="essays">
         <%= render "post", prompt: prompt1 %>
@@ -21,3 +22,4 @@
     <%= render 'layouts/rightbar' %>
   </div>
 </div>
+

@@ -17,12 +17,12 @@ class UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
-
-    def show
-      @user = User.find(params[:id])
-    end
   end
-
+  
+  def show
+    @user = User.find(params[:id])
+  end
+  
   private
   def user_params
     params.require(:user).permit(:username, :password, :species)

@@ -1,7 +1,8 @@
-<div id="rightbar" class="rightbar col-xs-1">
+<div id="rightbar" class="rightbar col-xs-2">
   <% if current_user %>
   <% user = current_user %>
-  
+ 
+     <%= image_tag profile_pic(current_user) %>
   <h3>
     <%= user.username + " the " + user.species %>
   </h3>
