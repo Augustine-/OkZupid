@@ -151,7 +151,6 @@
 
     if (this.isShown && this.options.backdrop) {
       var doAnimate = $.support.transition && animate
-
       this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
         .appendTo(document.body)
 

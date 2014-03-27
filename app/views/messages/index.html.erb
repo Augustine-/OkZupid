@@ -45,57 +45,58 @@ on ajax success fill a div with the parsed json from ajax req -->
     
 
 <script>
-$('.recieved').click(function (event) {
-  event.preventDefault();
-  var id = event.target.id
-  $.ajax({
-    url:"/messages/" + id + "/recieved",
-    type:"post",
-    dataType: "json",
-    data: {"_method":"delete"},
-    success: function () {
-      $('.' + id) + '-recieved'.remove();
-    },
-    error: function () {
-      $('.' + id + '-recieved').remove();
-    }
+$(document).ready(function () {
+  $('.recieved').click(function (event) {
+    event.preventDefault();
+    var id = event.target.id
+    $.ajax({
+      url:"/messages/" + id + "/recieved",
+      type:"post",
+      dataType: "json",
+      data: {"_method":"delete"},
+      success: function () {
+        $('.' + id) + '-recieved'.remove();
+      },
+      error: function () {
+        alert('error in index/secret!');
+        $('.' + id + '-recieved').remove();
+      }
+    })
   })
-})
       
-$('.sent').click(function (event) {
-  event.preventDefault();
-  var id = event.target.id
-  $.ajax({
-    url:"/messages/" + id + "/sent",
-    type:"post",
-    dataType: "json",
-    data: {"_method":"delete"},
-    success: function () {
-      alert("success!...wtf?")
-      $('.' + id + "-sent").remove();
-    },
-    error: function () {
-      $('.' + id + "-sent").remove();
-    }
+  $('.sent').click(function (event) {
+    event.preventDefault();
+    var id = event.target.id
+    $.ajax({
+      url:"/messages/" + id + "/sent",
+      type:"post",
+      dataType: "json",
+      data: {"_method":"delete"},
+      success: function () {
+        $('.' + id + "-sent").remove();
+      },
+      error: function () {
+        $('.' + id + "-sent").remove();
+      }
+    })
   })
-})
       
-$('.secret').click(function (event) {
-  event.preventDefault();
-  var id = event.target.id
-  $.ajax({
-    url:"/messages/" + id + "/recieved",
-    type:"post",
-    dataType: "json",
-    data: {"_method":"delete"},
-    success: function () {
-      alert("success!...wtf?")
-      $('.' + id + "-secret").remove();
-    },
-    error: function () {
-      $('.' + id + "-secret").remove();
-    }
-  })
-}) 
-
+  $('.secret').click(function (event) {
+    event.preventDefault();
+    var id = event.target.id
+    $.ajax({
+      url:"/messages/" + id + "/recieved",
+      type:"post",
+      dataType: "json",
+      data: {"_method":"delete"},
+      success: function () {
+        $('.' + id + "-secret").remove();
+      },
+      error: function () {
+        alert('error in index/secret!');
+        $('.' + id + "-secret").remove();
+      }
+    })
+  }) 
+})
 </script>

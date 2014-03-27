@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+// // 
+// $(window).on('hide.bs.modal', function () {
+//  $('.modal-backdrop').remove();
+// })

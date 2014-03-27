@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326063209) do
+ActiveRecord::Schema.define(version: 20140326235114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 20140326063209) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "secret",      default: false
+    t.boolean  "secret",              default: false
+    t.boolean  "visible_to_sender",   default: true
+    t.boolean  "visible_to_reciever", default: true
   end
 
   add_index "messages", ["reciever_id"], name: "index_messages_on_reciever_id", using: :btree

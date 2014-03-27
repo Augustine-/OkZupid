@@ -3,9 +3,9 @@ class MessagesController < ApplicationController
   
   def index
     @messages = {
-      recieved_messages: Message.all.where(reciever_id: current_user.id, secret: false), 
-      sent_messages: Message.all.where(sender_id: current_user.id),
-      secret_messages: Message.all.where(reciever_id: current_user.id, secret: true)
+      recieved_messages: Message.all.where(reciever_id: current_user.id, secret: false, visible_to_reciever: true), 
+      sent_messages: Message.all.where(sender_id: current_user.id, visible_to_sender: true),
+      secret_messages: Message.all.where(reciever_id: current_user.id, secret: true, visible_to_reciever: true)
     }
     
     respond_to do |format|
@@ -36,19 +36,19 @@ class MessagesController < ApplicationController
   def destroy_recieved
     @message = Message.find(params[:id])
     
-    @message.reciever_id = 0 
+    @message.visible_to_reciever = false 
     @message.save!
-   
-    kill(@message)
+    
+    render json: @message
   end
   
   def destroy_sent
     @message = Message.find(params[:id])
     
-    @message.sender_id = 0 
+    @message.visible_to_sender = false 
     @message.save!
-   
-    kill(@message)
+    
+    render json: @message
   end
   
   private
@@ -63,12 +63,13 @@ class MessagesController < ApplicationController
     end
   end
   
-  def kill(message)
-    if message.sender_id == 0 && @message.reciever_id == 0
-      message.destroy!
-    end
-    head :ok
-  end
+  # def kill(message)
+#     if message.visible_to_sender == false && @message.visible_to_reciever == false
+#       message.destroy!
+#     end
+#     
+#     render json: message 
+#   end
      
   def message_params
     params.require(:message).permit(:sender_id, :title, :body, :secret)

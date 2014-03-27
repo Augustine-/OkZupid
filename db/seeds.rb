@@ -9,3 +9,5 @@
 tony = User.create(username: "Tony", species: "Tiger", password: "frosted")
 sammy = User.create(username: "Sammy", species: "Snake", password: "parseltongue")
 periwinkle = User.create(username: "Periwinkle", species: "Penguin", password: "northpole")
+
+# tony_profile = Profile.create()
