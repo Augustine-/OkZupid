@@ -6,7 +6,7 @@
     <div class="col-xs-8">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#inbox" data-toggle="tab">Inbox</a></li>
-        <li><a href="#new" data-toggle="tab">New Message</a></li>
+        <li><a href="#new" data-toggle="tab" id="newmsg">New Message</a></li>
         <li><a href="#sent" data-toggle="tab">Sent Mail</a></li>
         <li><a href="#secrets" data-toggle="tab">Secret Admirers</a></li>
       </ul>
@@ -46,6 +46,7 @@ on ajax success fill a div with the parsed json from ajax req -->
 
 <script>
 $(document).ready(function () {
+
   $('.recieved').click(function (event) {
     event.preventDefault();
     var id = event.target.id
@@ -55,7 +56,7 @@ $(document).ready(function () {
       dataType: "json",
       data: {"_method":"delete"},
       success: function () {
-        $('.' + id) + '-recieved'.remove();
+        $('.' + id + '-recieved').remove();
       },
       error: function () {
         alert('error in index/secret!');

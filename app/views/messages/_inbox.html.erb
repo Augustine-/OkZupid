@@ -28,11 +28,14 @@
          </div>
       
          <div class="modal-footer">
+        <button type="button" class="btn btn-default reply" data-title="<%= message.title %>" data-username="<%= User.find(message.sender_id).username %>" data-dismiss="modal">
+          Reply?
+        </button>
         
            <button type="button" class="btn btn-default" data-dismiss="modal">
              Close
            </button>
-        
+           
          </div>
        </div>
      </div>
@@ -43,3 +46,14 @@
   <%= "No mail yet! Get out there, sonny!" %>  
 <% end %>                                      
                                                
+<script>
+$('.reply').click(function () {
+  debugger
+  username = event.currentTarget.attributes[3].value
+  title = event.currentTarget.attributes[2].value
+  
+  document.getElementById("newmsg").click();
+  document.getElementsByTagName("input")[1].value = username;
+  document.getElementsByTagName("input")[2].value = "Re: " + title;
+})
+</script>                                               
