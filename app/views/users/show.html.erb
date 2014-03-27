@@ -9,6 +9,7 @@
     <%= render 'layouts/leftbar' %>
     
     <div class="col-xs-8">
+    <h3><%= @user.username + " the " + @user.species %></h3>
       <div class="essays">
         <%= render "post", prompt: prompt1 %>
         <%= render "post", prompt: prompt2 %>
