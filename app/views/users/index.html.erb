@@ -1,0 +1,6 @@
+<div id="delta">
+  <% @users.each do |user| %>
+  <a href="<%= user_url(user) %>"><%= user.username + ' the ' + user.species %></a>
+  <br>
+  <% end %>
+</div>

@@ -1,0 +1,106 @@
+first step of browser?
+
+local cache
+ this is recently acquired data from the interbutt
+ 
+ 
+ next step?
+ 
+ using DNS IP from network interface card, 
+ given by DHCP Dynamic Host Control Protocol or manually assigned. 
+ 
+ when you connect to an ISP, your ISP will give you a DNS server and an IP addy.
+ You can add your own DNS addy. 
+ 
+ 8.8.8.8 = google
+ 4.2.2.2 = the primordial DNS
+ 
+ modheader, a cool chrome extension.
+ 
+ setup your network so that it breaks packets down into more manageable sizes. 
+ 1500 is good. bigger = more packet loss, smaller = more packets being sent.
+ 
+ TCP:
+ 
+ handshake
+ collects packets thusly
+   buffer is created, all packets must arrive in this window
+   if it doesnt get a packet, it makes a new request.
+   
+   
+  a big portion of how to make youir page more efficient is to have less packets
+  less requests. more caching. 
+  
+  C name = us-1-east-1-a = redirect
+  A record = IP addy
+  
+  when we have an IP, we sent a get req
+  get the header, its important
+  if its too big, you get lots of TCP packets
+  
+  DNS > IP addy > HTTP req (through TCP packets)
+  
+  Make one image request that is actually a large image with many small images on it. Then you can pick what part of the image you want to reveal. 
+  
+  CDN = content delivery network
+  
+  mostly pay stuff, but many things are free. like jQuery!
+  
+  you can add a cache control header, or an expires header, and it will cache yo assets
+  
+  put stylesheets in the head, because you dont want html rendered without css
+  
+  if you're going to put your js in the bottom, make sure you are rendering stuff in the dom to begin with
+  
+  RULE: preloading vs postloading. things you need early, things you need later. the browser stalls when reading a script file. if you have a ton of js that isnt going to be used until later in the application, put it at the bottom, or else it will slow the page from loading initially. 
+  
+  
+use cookie-free domains for components. for static assets, you dont need cookies. 
+
+scale images using imagemagic
+
+cdn 
+js to the bottom
+build dom tree in memory
+cache
+minify
+
+when someone says server, what they usually mean is NOT a box, but rather a PROCESS.
+
+difference between thread and process
+OS-level concepts
+
+a process is an absctraction that a process gives to an application
+each application is running in a separate process
+actually the processor is rapidly swapping between processes. 
+  
+  
+  a great victory in compsci lands is that the database can handle all of our concurrency concerns. it can also become a huge bottleneck. we can scale way up, and parallelize.
+  
+  database load reduction ideas:
+  add more servers
+    problems:
+      data not communicated between servers
+      
+      
+      dont respond back to user until all writes are completed
+      
+      an LRU cache is like a queue, like a really shitty line
+      
+      
+      CAP theorem
+      index
+      caching
+      function separation (service oriented architecture)
+      denormalization
+      master/save mirroring
+      sharding
+      hadoop, hadoop distributed file system, map reduce
+      
+      SAO means having different systems entirely for business aspects which do not need to communicate with eachother, i.e. customer service and monetary transactions. 
+      
+      anytime we have relations across tables, we're kind of screwed. 
+      
+      flat-file data stores
+        every record is like a little file. for Mongo, you're literally taking json and writing it to a file. 
+ 

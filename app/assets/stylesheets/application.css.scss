@@ -14,7 +14,11 @@
 
 @import "bootstrap";
 
-
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
 
 textarea {
   height: auto;
@@ -23,6 +27,10 @@ textarea {
 
 img {
   width:33%;
+}
+
+body{
+  background-color: #9834A8;
 }
 
 .logo, a.logo:hover, a.logo:visited, a.logo:active{
@@ -36,6 +44,8 @@ img {
 
 .essays{
   background-color: white;
+  float:none;
+  margin:auto;
 }
 
 .okz-header{

@@ -1,22 +1,29 @@
-<h1>Welcome back to the Zoo!</h1>
+<div class='row'>
+  <p></p>
+</div>
+<div class='row'>
+  <div class="col-md-2 col-md-offset-5">
+  <form action="<%= session_url %>" class="form-horizontal" method="post">
+    <%= auth_token %>
+    <label class='text-center'>
+      Username
+      <input type="text" class="form-control" name="user[username]" value="" id="username">
+    </label>
+    <br>
 
-<form action="<%= session_url %>" method="post">
-  <%= auth_token %>
-  <label>
-    Username
-    <input type="text" name="user[username]" value="" id="username">
-  </label>
-  <br>
+    <label class='text-center'>
+      Password
+      <input type="password" class="form-control" name="user[password]" value="" id="password">
+    </label>
+    <br>
 
-  <label>
-    Password
-    <input type="password" name="user[password]" value="" id="password">
-  </label>
-  <br>
-
-  <input type="submit" value="Log In">
-</form>
-
+    <div class="form-actions">
+        <button type="submit" class="btn btn-default">Log In</button>
+    </div>
+    
+  </form>
+  </div>
+</div>
 <script> 
 var tonyLogins = function () {
   document.getElementById('username').value="Tony";

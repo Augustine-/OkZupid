@@ -1,25 +1,25 @@
 
-<div id="delta" class="container">                 
-  <% prompt1 = "My self summary" %>
-  <% prompt2 = "What I'm doing with my life" %>
-  <% prompt3 = "Six things I couldn't live without" %>
-  <% prompt4 = "On a typical Friday night I'm..." %>
-
+<div id="delta" class="container">  
   <div class="row">
-    <%= render 'layouts/leftbar' %>
-    
-    <div class="col-xs-8">
-      <%= image_tag profile_pic(@user) %>
-    <h3><%= @user.username + " the " + @user.species %></h3>
-      <div class="essays">
-        <%= render "post", prompt: prompt1 %>
-        <%= render "post", prompt: prompt2 %>
-        <%= render "post", prompt: prompt3 %>
-        <%= render "post", prompt: prompt4 %>
-      </div>
-    </div>
-    
-    <%= render 'layouts/rightbar' %>
-  </div>
-</div>
+    <% prompt1 = "My self summary" %>
+    <% prompt2 = "What I'm doing with my life" %>
+    <% prompt3 = "Six things I couldn't live without" %>
+    <% prompt4 = "On a typical Friday night I'm..." %>
 
+    <div class="row">
+      <%= render 'layouts/leftbar' %>
+      <div class="col-xs-8 profile">
+        <%= image_tag profile_pic(@user) %>
+        <h3><%= @user.username + " the " + @user.species %></h3>
+        <div class="essays">
+          <%= render "post", prompt: prompt1 %>
+          <%= render "post", prompt: prompt2 %>
+          <%= render "post", prompt: prompt3 %>
+          <%= render "post", prompt: prompt4 %>
+        </div>
+    
+      </div>
+      <%= render 'layouts/rightbar' %>
+    </div>
+  </div>
+</div>               
