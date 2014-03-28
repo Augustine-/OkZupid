@@ -55,6 +55,17 @@ body{
   height: 100%;
 }
 
+
+.rightbar{
+  position: relative;
+  right:0px;
+  height: 100%;
+}
+
+.text-center{
+  color: white;
+}
+
 .okz-header{
   background-image: linear-gradient(to bottom,#3D17E7 0, #903AAB 100%);
   padding-top: 5px;
@@ -63,8 +74,6 @@ body{
   text-shadow: 0 1px 0 rgba(202, 0, 234, 0.46);
 }
 
-.rightbar{
-  position: relative;
-  right:0px;
-  height: 100%;
+.bg-primary {
+background-color: #143C5F;
 }

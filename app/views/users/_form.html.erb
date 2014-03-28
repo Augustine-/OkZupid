@@ -1,31 +1,38 @@
 <% action = user.persisted? ? user_url(user) : users_url   %>
 <% method = user.persisted? ? "put" : "post" %>
 <% message = user.persisted? ? "Update" : "Create" %>
+<div class='row'>
+  <p></p>
+</div>
+<div class='row'>
+  <div class="col-md-2 col-md-offset-5">
+    <h2 class="text-center"> What sort of animal are you?</h2>
+    <form action="<%= action %>" method="post">
+      <input
+      name="_method"
+      type="hidden"
+      value="<%= method %>">
+  
+      <%= auth_token %>
+  
+      <label class="text-center">
+        Username
+        <input type="text" name="user[username]" value="<%= user.username %>">
+      </label>
+      <br>
+  
+      <label class="text-center">
+        Password
+        <input type="password" name="user[password]" value="">
+      </label>
+      <br>
+      <label class="text-center">
+        Species   
+        <input type="text" name="user[species]" value="">
+      </label>
 
-<form action="<%= action %>" method="post">
-  <input
-  name="_method"
-  type="hidden"
-  value="<%= method %>">
-  
-  <%= auth_token %>
-  
-  <label>
-    Username
-    <input type="text" name="user[username]" value="<%= user.username %>">
-  </label>
-  <br>
-  
-  <label>
-    Password
-    <input type="password" name="user[password]" value="">
-  </label>
-  <br>
-  <label>
-    Species   
-    <input type="text" name="user[species]" value="">
-  </label>
-
-  <p><input type="submit" value="<%= message %>"></p>
+      <p class="form-actions"><input type="submit" value="<%= message %>"></p>
     
-</form>
+    </form>
+  </div>
+</div>
