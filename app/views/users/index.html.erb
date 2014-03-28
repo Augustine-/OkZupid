@@ -1,6 +1,12 @@
-<div id="delta">
-  <% @users.each do |user| %>
-  <a href="<%= user_url(user) %>"><%= user.username + ' the ' + user.species %></a>
-  <br>
-  <% end %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <% @users.each do |user| %>
+        <a href="<%= user_url(user) %>"><%= user.username + ' the ' + user.species %></a>
+        <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

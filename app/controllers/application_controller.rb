@@ -23,7 +23,8 @@ PROFILE_PIX = {
   snake: "snake.jpg",
   turtle: "turtle.jpg",
   whale: "whale.jpg",
-  penguin: "penguin.jpg"
+  penguin: "penguin.jpg",
+  raccoon: "raccoon.gif"
 }
 
 class ApplicationController < ActionController::Base

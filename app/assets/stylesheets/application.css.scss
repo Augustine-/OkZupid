@@ -29,6 +29,11 @@ img {
   width:33%;
 }
 
+
+#delta {
+  text-align: center;
+}
+
 body{
   background-color: #9834A8;
 }
@@ -46,6 +51,8 @@ body{
   background-color: white;
   float:none;
   margin:auto;
+  width: 60%;
+  height: 100%;
 }
 
 .okz-header{
@@ -60,11 +67,4 @@ body{
   position: relative;
   right:0px;
   height: 100%;
-}
-
-.essays {
-  width: 60%;
-  height: 100%;
-  align: center;
-  float: left;
 }

@@ -1,4 +1,3 @@
-
 <div id="delta" class="container">  
   <div class="row">
     <% prompt1 = "My self summary" %>
@@ -7,7 +6,7 @@
     <% prompt4 = "On a typical Friday night I'm..." %>
 
     <div class="row">
-      <%= render 'layouts/leftbar' %>
+      <%= render 'layouts/leftbar'%>
       <div class="col-xs-8 profile">
         <%= image_tag profile_pic(@user) %>
         <h3><%= @user.username + " the " + @user.species %></h3>

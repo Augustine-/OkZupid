@@ -2,11 +2,18 @@
   <% if current_user %>
   <% user = current_user %>
  
-     <%= image_tag profile_pic(current_user) %>
+  <%= image_tag profile_pic(current_user) %>
   <h3>
     <%= user.username + " the " + user.species %>
-  </h3>
-  <%= link_to "Log Out", session_url, method: :delete%>
+  </h3>   
+  
 
+  
+
+                                                                                                                   
+<%= link_to session_url, method: :delete, class: 'btn btn-mini btn-danger' do %>
+  <i class="glyphicon glyphicon-heart">LogOut</i>
+<% end %>
+  
   <% end %>
 </div>
