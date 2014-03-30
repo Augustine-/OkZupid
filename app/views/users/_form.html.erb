@@ -8,12 +8,13 @@
   <div class="col-md-2 col-md-offset-5">
     <h2 class="text-center"> What sort of animal are you?</h2>
     <form action="<%= action %>" method="post">
+       <%= auth_token %>
       <input
       name="_method"
       type="hidden"
       value="<%= method %>">
   
-      <%= auth_token %>
+     
   
       <label class="text-center">
         Username

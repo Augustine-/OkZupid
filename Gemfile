@@ -16,7 +16,7 @@ gem 'jquery-rails'
 
 gem 'jbuilder', '~> 1.2'
 
-
+gem 'bcrypt'
 
 group :doc do
   gem 'sdoc', require: false
@@ -27,7 +27,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'bcrypt'
 end
 
 group :test do
