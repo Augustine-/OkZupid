@@ -1,28 +1,20 @@
-== README
+== www.okzupid.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A website for talking animals to find eachother in the big, scary world. 
+Currently in alpha, has the following functionality:
 
-Things you may want to cover:
+* Cool landing page
+* Handmade synchrounous authentication using BCrypt. 
+* Profile pages with pre-selected images depending upon user species, and standardized essay prompts.
+* One-page private messaging system made with Rails/JavaScript/AJAX. 
+* Private messaging includes inbox, outbox, and anonymous mail. 
+* Messages are dynamically generated modals in flagrant disregard of bootstrap's "one modal per page" policy.
+* "Find Someone" index page of all users on site.
 
-* Ruby version
+= Pending functionality:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Match questions will generate a rating on other user's profile pages based upon their answers vs your answers.
+* Option to go to profile of the user who sent a given message. 
+* "Quickmatch" button to reccomend another user based on match rating. 
+* "View all by species" section on the index page. 
+* Preference indication: "I'm a dog who likes cats who like dogs." 
